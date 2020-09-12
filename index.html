@@ -126,10 +126,10 @@
 <body>
   <div class="input-box" id="input-box" style="text-align: center;">
     <p style="font-size: 3rem;">反复横跳！</p>
-    <div>你的名字：<input type="text" name="" id="input-name" placeholder="李霸天"></div>
-    <div>你的学院：<input type="text" name="" id="input-aca" placeholder="信息与通信工程学院"></div>
-    <div>你的学号：<input type="text" name="" id="input-number" placeholder="2020210777"></div>
-    <div><button onclick="Enter(0)">“我想进去可以吗”</button><button onclick="Enter(1)">“放我出去吧”</button></div>
+    <div>你的名字：<input type="text" name="" id="input-name" placeholder="周强"></div>
+    <div>你的学院：<input type="text" name="" id="input-aca" placeholder="数学学院"></div>
+    <div>你的学号：<input type="text" name="" id="input-number" placeholder="2017sb945945"></div>
+    <div><!--<button onclick="Enter(0)">“我想进去可以吗”</button>--><button onclick="Enter(0)">“放我出去吧”</button></div>
   </div>
 	<div class="content" id="content" style="display: none;">
 		<div class="up">
@@ -140,29 +140,29 @@
     </div>
     <div class="infos">
       <div class="info">
-        <div class="info-title">姓名</div>
+        <div class="info-title">学生姓名</div>
         <div class="info-text" id="info-name">李霸天</div>
       </div>
       <div class="info">
+        <div class="info-title">学号</div>
+        <div class="info-text" id="info-number">2020210777</div>
+      </div>
+      <!--<div class="info">
         <div class="info-title">学院</div>
         <div class="info-text" id="info-aca">信息与通信工程学院</div>
+      </div>-->
+      <div class="info info-last">
+        <div class="info-title">出校时间</div>
+        <div class="info-text" id="time">2020-09-06 09:16:04</div>
       </div>
       <div class="info">
         <div class="info-title">状态码</div>
         <div class="QR-code"><img src='https://i.bmp.ovh/imgs/2020/09/e7f5c9eb667fb424.png' /></div>
       </div>
-      <div class="info">
+      <!--<div class="info">
         <div class="info-title">状态</div>
         <div class="info-text permit" id="status">允许出校</div>
-      </div>
-      <div class="info">
-        <div class="info-title">学工号</div>
-        <div class="info-text" id="info-number">2020210777</div>
-      </div>
-      <div class="info info-last">
-        <div class="info-title">出入校时间</div>
-        <div class="info-text" id="time">2020-09-06 09:16:04</div>
-      </div>
+      </div>-->
     </div>
     <!-- footer使用固定布局 -->
     <div class="footer">

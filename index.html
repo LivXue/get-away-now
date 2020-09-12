@@ -141,11 +141,11 @@
     <div class="infos">
       <div class="info">
         <div class="info-title">学生姓名</div>
-        <div class="info-text" id="info-name">name</div>
+        <div class="info-text" id="info-name"><var>name</var></div>
       </div>
       <div class="info">
         <div class="info-title">学号</div>
-        <div class="info-text" id="info-number">number</div>
+        <div class="info-text" id="info-number"><var>number</var></div>
       </div>
       <!--<div class="info">
         <div class="info-title">学院</div>
@@ -217,9 +217,9 @@
       if (name != '') {
         document.getElementById("info-name").innerHTML = name;
       }
-      if (aca != '') {
-        document.getElementById("info-aca").innerHTML = aca;
-      }
+      //if (aca != '') {
+      //  document.getElementById("info-aca").innerHTML = aca;
+      //}
       if (number != '') {
         document.getElementById("info-number").innerHTML = number;
       }

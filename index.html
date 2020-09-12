@@ -58,13 +58,14 @@
       color: #76777a;
       line-height: 8vh;
       background-color: white;
-      text-align: left;
+      text-align: center;
     }
     .QR-code{
       width: 100vw;
       color: #76777a;
       background-color: white;
       text-align: center;
+      padding-top: 5%;
       padding-bottom: 5%;
     }
     .QR-code img{
@@ -187,12 +188,12 @@
       //  curDateTime = curDateTime + ":0" + seconds;
       return curDateTime;
     };
-    curTime = " " + curDateTime();
+    curTime = curDateTime();
     
     function Enter(e) {
       console.log(e)
-      var name = " " + document.getElementById("input-name").value;
-      var number = " " + document.getElementById("input-number").value;
+      var name = document.getElementById("input-name").value;
+      var number = document.getElementById("input-number").value;
 
       document.getElementById("content").style.display = "";
       document.getElementById("input-box").style.display = "none";

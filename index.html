@@ -187,12 +187,12 @@
       //  curDateTime = curDateTime + ":0" + seconds;
       return curDateTime;
     };
-    curTime = curDateTime();
+    curTime = " " + curDateTime();
     
     function Enter(e) {
       console.log(e)
-      var name = document.getElementById("input-name").value;
-      var number = document.getElementById("input-number").value;
+      var name = " " + document.getElementById("input-name").value;
+      var number = " " + document.getElementById("input-number").value;
 
       document.getElementById("content").style.display = "";
       document.getElementById("input-box").style.display = "none";

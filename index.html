@@ -1,8 +1,7 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+<!-- saved from url=(0038)http://charleylee.gitee.io/out-school/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>行程管理</title>
 
@@ -123,50 +122,37 @@
     }
 	</style>
 </head>
-<body>
+<body class="vsc-initialized">
   <div class="input-box" id="input-box" style="text-align: center;">
     <p style="font-size: 3rem;">反复横跳！</p>
-    <div>你的名字：<input type="text" name="" id="input-name" placeholder="周强"></div>
-    <!--<div>你的学院：<input type="text" name="" id="input-aca" placeholder="数学学院"></div>-->
-    <div>你的学号：<input type="text" name="" id="input-number" placeholder="2017sb945945"></div>
-    <div><!--<button onclick="Enter(0)">“我想进去可以吗”</button>--><button onclick="Enter(0)">“放我出去吧”</button></div>
+    <div>你的名字：<input type="text" name="" id="input-name" placeholder="周强" field_signature="246837635" form_signature="8404015848584033285"></div>
+    <div>你的学号：<input type="text" name="" id="input-number" placeholder="2017sb945945" field_signature="1852501389" form_signature="8404015848584033285"></div>
+    <div><button onclick="Enter(0)">“放我出去吧”</button></div>
   </div>
 	<div class="content" id="content" style="display: none;">
 		<div class="up">
 			<div class="up-text">申请表单</div>
 		</div>
 		<div class="topic">
-      <div class="topic-text"><img src='https://i.bmp.ovh/imgs/2020/09/04d93329ad7c7ab4.png' />行程管理</div>
+      <div class="topic-text"><img src="./index_files/04d93329ad7c7ab4.png">行程管理</div>
     </div>
     <div class="infos">
       <div class="info">
         <div class="info-title">学生姓名</div>
-        <div class="info-text" id="info-name"></div>
+        <div class="info-text" id="info-name">周强</div>
       </div>
       <div class="info">
         <div class="info-title">学号</div>
-        <div class="info-text" id="info-number"></div>
+        <div class="info-text" id="info-number">2017sb945945</div>
       </div>
-      <!--<div class="info">
-        <div class="info-title">学院</div>
-        <div class="info-text" id="info-aca">信息与通信工程学院</div>
-      </div>-->
       <div class="info info-last">
         <div class="info-title">出校时间</div>
         <div class="info-text" id="time">2020-09-06 09:16:04</div>
       </div>
       <div class="info">
         <div class="info-title">状态码</div>
-        <div class="QR-code"><img src='https://i.bmp.ovh/imgs/2020/09/e7f5c9eb667fb424.png' /></div>
+        <div class="QR-code"><img src="./index_files/e7f5c9eb667fb424.png"></div>
       </div>
-      <!--<div class="info">
-        <div class="info-title">状态</div>
-        <div class="info-text permit" id="status">允许出校</div>
-      </div>-->
-    </div>
-    <!-- footer使用固定布局 -->
-    <div class="footer">
-      <div class="gengduo">更多</div>
     </div>
   </div>
   <script type="text/javascript">
@@ -208,7 +194,6 @@
     function Enter(e) {
       console.log(e)
       var name = document.getElementById("input-name").value;
-      //var aca = document.getElementById("input-aca").value;
       var number = document.getElementById("input-number").value;
 
       document.getElementById("content").style.display = "";
@@ -217,16 +202,11 @@
       if (name != '') {
         document.getElementById("info-name").innerHTML = name;
       }
-      //if (aca != '') {
-      //  document.getElementById("info-aca").innerHTML = aca;
-      //}
       if (number != '') {
         document.getElementById("info-number").innerHTML = number;
       }
-      var status = ['允许入校', '允许出校'];
-      document.getElementById("status").innerHTML = status[parseInt(e)];
       document.getElementById("time").innerHTML = curTime;
     }
   </script>
-</body>
-</html>
+
+</body><div style="all: initial;"><div></div></div></html>

@@ -127,7 +127,7 @@
   <div class="input-box" id="input-box" style="text-align: center;">
     <p style="font-size: 3rem;">反复横跳！</p>
     <div>你的名字：<input type="text" name="" id="input-name" placeholder="周强"></div>
-    <div>你的学院：<input type="text" name="" id="input-aca" placeholder="数学学院"></div>
+    <!--<div>你的学院：<input type="text" name="" id="input-aca" placeholder="数学学院"></div>-->
     <div>你的学号：<input type="text" name="" id="input-number" placeholder="2017sb945945"></div>
     <div><!--<button onclick="Enter(0)">“我想进去可以吗”</button>--><button onclick="Enter(0)">“放我出去吧”</button></div>
   </div>
@@ -136,16 +136,16 @@
 			<div class="up-text">申请表单</div>
 		</div>
 		<div class="topic">
-      <div class="topic-text"><img src='https://i.bmp.ovh/imgs/2020/09/04d93329ad7c7ab4.png' />请假外出、返校权限查询</div>
+      <div class="topic-text"><img src='https://i.bmp.ovh/imgs/2020/09/04d93329ad7c7ab4.png' />行程管理</div>
     </div>
     <div class="infos">
       <div class="info">
         <div class="info-title">学生姓名</div>
-        <div class="info-text" id="info-name">李霸天</div>
+        <div class="info-text" id="info-name">name</div>
       </div>
       <div class="info">
         <div class="info-title">学号</div>
-        <div class="info-text" id="info-number">2020210777</div>
+        <div class="info-text" id="info-number">number</div>
       </div>
       <!--<div class="info">
         <div class="info-title">学院</div>
@@ -208,7 +208,7 @@
     function Enter(e) {
       console.log(e)
       var name = document.getElementById("input-name").value;
-      var aca = document.getElementById("input-aca").value;
+      //var aca = document.getElementById("input-aca").value;
       var number = document.getElementById("input-number").value;
 
       document.getElementById("content").style.display = "";

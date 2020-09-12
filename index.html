@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>请假外出、返校权限查询通行码</title>
+
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			background-color: #eeeeee;
+			font-size: 0.9rem;
+		}
+		.up{
+			width: 100vw;
+			height: 8vh;
+      color: #5383ec;
+			background-color: white;
+		}
+		.up-text{
+			width: 45vw;
+			height: 7.5vh;
+			font-size: 1rem;
+			margin-left: 1vw;
+      text-align: center;
+      line-height: 7.5vh;
+      /* display: flex;
+      align-items: center; */
+			border-bottom: 3px solid #5383ec;
+		}
+		.topic{
+      width: 94vw;
+      height: 7vh;
+      font-size: 0.8rem;
+      line-height: 7vh;
+      margin-top: 2vh;
+      margin-left: 3vw;
+      padding-left: 3vw;
+      background-color: white;
+      font-weight: bold;
+		}
+    .topic img{
+      width: 2vh;
+      height: 2vh;
+      margin-right: 1vw;
+      transform: translateY(10%);
+    }
+    .info-title{
+      color: #888;
+      margin-left: 3vw;
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+    }
+    .info-text{
+      width: 100vw;
+      height: 8vh;
+      color: #76777a;
+      line-height: 8vh;
+      background-color: white;
+      text-align: center;
+    }
+    .QR-code{
+      width: 100vw;
+      color: #76777a;
+      background-color: white;
+      text-align: center;
+      padding-top: 5%;
+      padding-bottom: 5%;
+    }
+    .QR-code img{
+      width: 40vw;
+      height: 40vw;
+    }
+    .permit{
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #01bb00;
+    }
+    .info-last{
+      margin-bottom: 12vh;
+    }
+    .footer{
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      padding-left: 2vw;
+      padding-top: 4vw;
+      padding-bottom: 2vw;
+      width: 100vw;
+      height: 6.5vh;
+      background-color: white;
+    }
+    .gengduo{
+      width: 30vw;
+      height: 6vh;
+      border: 1px solid #5383ec;
+      border-radius: 50px;
+      color: #5383ec;
+      text-align: center;
+      line-height: 6vh;
+    }
+    .input-box{
+      width: 80vw;
+      /* height: 40vh; */
+      margin-top: 20vh;
+      margin-left: 10vw;
+      margin-bottom: 5vh;
+      border: 5px solid #5383ec;
+      border-radius: 50px;
+      font-size: 1.2rem;
+    }
+    .input-box div{
+      width: 70vw;
+      height: 5vh;
+      margin: 0 auto;
+      text-align: center;
+    }
+    button{
+      margin-right: 2vw;
+    }
+	</style>
+</head>
+<body>
+  <div class="input-box" id="input-box" style="text-align: center;">
+    <p style="font-size: 3rem;">反复横跳！</p>
+    <div>你的名字：<input type="text" name="" id="input-name" placeholder="李霸天"></div>
+    <div>你的学院：<input type="text" name="" id="input-aca" placeholder="信息与通信工程学院"></div>
+    <div>你的学号：<input type="text" name="" id="input-number" placeholder="2020210777"></div>
+    <div><button onclick="Enter(0)">“我想进去可以吗”</button><button onclick="Enter(1)">“放我出去吧”</button></div>
+  </div>
+	<div class="content" id="content" style="display: none;">
+		<div class="up">
+			<div class="up-text">申请表单</div>
+		</div>
+		<div class="topic">
+      <div class="topic-text"><img src='https://i.bmp.ovh/imgs/2020/09/04d93329ad7c7ab4.png' />请假外出、返校权限查询</div>
+    </div>
+    <div class="infos">
+      <div class="info">
+        <div class="info-title">姓名</div>
+        <div class="info-text" id="info-name">李霸天</div>
+      </div>
+      <div class="info">
+        <div class="info-title">学院</div>
+        <div class="info-text" id="info-aca">信息与通信工程学院</div>
+      </div>
+      <div class="info">
+        <div class="info-title">状态码</div>
+        <div class="QR-code"><img src='https://i.bmp.ovh/imgs/2020/09/e7f5c9eb667fb424.png' /></div>
+      </div>
+      <div class="info">
+        <div class="info-title">状态</div>
+        <div class="info-text permit" id="status">允许出校</div>
+      </div>
+      <div class="info">
+        <div class="info-title">学工号</div>
+        <div class="info-text" id="info-number">2020210777</div>
+      </div>
+      <div class="info info-last">
+        <div class="info-title">出入校时间</div>
+        <div class="info-text" id="time">2020-09-06 09:16:04</div>
+      </div>
+    </div>
+    <!-- footer使用固定布局 -->
+    <div class="footer">
+      <div class="gengduo">更多</div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function curDateTime() {
+      var d = new Date();
+      var year = d.getYear();
+      var month = d.getMonth() + 1;
+      var date = d.getDate();
+      var day = d.getDay();
+      var hours = d.getHours();
+      var minutes = d.getMinutes();
+      var seconds = d.getSeconds();
+      var ms = d.getMilliseconds();
+      var curDateTime = String(1900 + parseInt(year));
+      if (month > 9)
+        curDateTime = curDateTime + "-" + month;
+      else
+        curDateTime = curDateTime + "-0" + month;
+      if (date > 9)
+        curDateTime = curDateTime + "-" + date;
+      else
+        curDateTime = curDateTime + "-0" + date;
+      if (hours > 9)
+        curDateTime = curDateTime + " " + hours;
+      else
+        curDateTime = curDateTime + "0" + hours;
+      if (minutes > 9)
+        curDateTime = curDateTime + ":" + minutes;
+      else
+        curDateTime = curDateTime + ":0" + minutes;
+      if (seconds > 9)
+        curDateTime = curDateTime + ":" + seconds;
+      else
+        curDateTime = curDateTime + ":0" + seconds;
+      return curDateTime;
+    };
+    curTime = curDateTime();
+    
+    function Enter(e) {
+      console.log(e)
+      var name = document.getElementById("input-name").value;
+      var aca = document.getElementById("input-aca").value;
+      var number = document.getElementById("input-number").value;
+
+      document.getElementById("content").style.display = "";
+      document.getElementById("input-box").style.display = "none";
+
+      if (name != '') {
+        document.getElementById("info-name").innerHTML = name;
+      }
+      if (aca != '') {
+        document.getElementById("info-aca").innerHTML = aca;
+      }
+      if (number != '') {
+        document.getElementById("info-number").innerHTML = number;
+      }
+      var status = ['允许入校', '允许出校'];
+      document.getElementById("status").innerHTML = status[parseInt(e)];
+      document.getElementById("time").innerHTML = curTime;
+    }
+  </script>
+</body>
+</html>

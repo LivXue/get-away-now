@@ -159,7 +159,7 @@
 <body class="vsc-initialized">
   <div class="input-box" id="input-box" style="text-align: center;">
     <p style="font-size: 2rem;">人类高质量出校码</p>
-    <div>你的部门：<input type="text" name="" id="input-school" placeholder="本科部" field_signature="246837635" form_signature="8404015848584033285"></div>
+    <div>你的部门：<input type="text" name="" id="input-school" placeholder="本科部" field_signature="513454351" form_signature="8404015848584033285"></div>
     <div>你的名字：<input type="text" name="" id="input-name" placeholder="周强" field_signature="246837635" form_signature="8404015848584033285"></div>
     <div>你的学号：<input type="text" name="" id="input-number" placeholder="2017sb945945" field_signature="1852501389" form_signature="8404015848584033285"></div>
     <div><button onclick="Enter(0)">一键退学</button></div>
@@ -171,7 +171,7 @@
       <a class="up-text2" text-align="right">处理记录</a>
     </div>-->
     <p class="topic">
-      <img src="./9sa8fc9ah2.PNG" align="texttop" class="icon">当前部门：本科部
+      <img src="./9sa8fc9ah2.PNG" align="texttop" class="icon"><a id="info-school">当前部门：本科部</a>
       <img src="./down.png" align="right" class="arrow">
     </p>
 		<div class="topic">
@@ -234,12 +234,16 @@
     
     function Enter(e) {
       console.log(e)
+      var school = document.getElementById("input-school").value;
       var name = document.getElementById("input-name").value;
       var number = document.getElementById("input-number").value;
 
       document.getElementById("content").style.display = "";
       document.getElementById("input-box").style.display = "none";
 
+      if (school != '') {
+        document.getElementById("info-school").innerHTML = "当前部门：" + school;
+      }
       if (name != '') {
         document.getElementById("info-name").innerHTML = name;
       }
